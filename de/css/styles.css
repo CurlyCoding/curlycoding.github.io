@@ -183,18 +183,7 @@ ul {
     list-style-position: inside; /* Optional: Align bullets inside the list */
 }
 
-@media (max-width: 900px) {
-    .container {
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-    }
 
-    .thumbnail img {
-        max-width: 100%;
-        height: auto;
-    }
-}
 
 h1 {
     font-size: 50px;

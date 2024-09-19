@@ -46,3 +46,16 @@ h1 {
     color: #a0a3d1;     /* Light color for contrast */
     margin-bottom: 20px; /* Space between the date and the thumbnail */
 }
+
+@media (max-width: 900px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .thumbnail img {
+        max-width: 100%;
+        height: auto;
+    }
+}
