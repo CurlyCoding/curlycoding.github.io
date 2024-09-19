@@ -129,55 +129,6 @@ header {
     flex-grow: 1;
 }
 
-.thumbnail {
-    display: flex;
-    justify-content: center; /* Center the image horizontally */
-    margin-bottom: 30px;
-}
-
-.thumbnail img {
-    width: 100%; 
-    max-width: 1000px; 
-    border-radius: 15px;
-    min-width: none;
-}
-
-.blog-post {
-    margin: 0 auto;
-    max-width: 800px;
-}
-
-.blog-post p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.blog-post h2 {
-    font-size: 32px;
-}
-.blog-post h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-.blog-post h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-h1 {
-    font-size: 50px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.publish-date {
-    text-align: center; /* Center the date text */
-    font-size: 16px;    /* Smaller font size */
-    color: #a0a3d1;     /* Light color for contrast */
-    margin-bottom: 20px; /* Space between the date and the thumbnail */
-}
-
 footer {
     background-color: #1a1d2e; /* Match with your design */
     color: white;
@@ -228,10 +179,6 @@ a:active {
     color: #ff9505; /* Change to a bright accent color when active */
 }
 
-a:visited {
-    color: #a0a3d1; /* Keep visited links the same color */
-}
-
 ul {
     list-style-position: inside; /* Optional: Align bullets inside the list */
 }
@@ -247,4 +194,10 @@ ul {
         max-width: 100%;
         height: auto;
     }
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
 }
