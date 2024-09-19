@@ -13,11 +13,27 @@
 <body>
     <div class="wrapper">
         <header>
-            <div><img class="logo" src="../img/logo.png" alt="Logo"></div>
+            <a href="https://curlycoding.github.io/de"><img class="logo" src="../img/logo.png" alt="Logo"></a>
+        
+            <div class="menu-icon" id="menu-icon">
+                &#9776;  <!-- Unicode character for hamburger menu -->
+            </div>
+        
+            <!-- Full-screen overlay for navigation -->
+            <div class="nav-overlay" id="nav-overlay">
+                <!-- Close icon inside the overlay -->
+                <div class="close-icon" id="close-icon">&times;</div>
+                <nav class="nav-links-overlay">
+                    <a href="https://curlycoding.github.io/de">Home</a>
+                    <a href="https://curlycoding.github.io/de/blog">Blog</a>
+                    <a href="https://curlycoding.github.io/de/contact">Kontakt</a>
+                </nav>
+            </div>
+        
             <nav class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Blog</a>
-                <a href="#">Kontakt</a>
+                <a href="https://curlycoding.github.io/de">Home</a>
+                <a href="https://curlycoding.github.io/de/blog">Blog</a>
+                <a href="https://curlycoding.github.io/de/contact">Kontakt</a>
             </nav>
         </header>
 
@@ -175,6 +191,7 @@ var value = encryptedBox.put('secret');
         </div>
     </div>
 
+
     <footer>
         <div class="footer-content">
             <ul class="footer-links">
@@ -186,6 +203,28 @@ var value = encryptedBox.put('secret');
         </div>
     </footer>
 
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navOverlay = document.getElementById('nav-overlay');
+        const closeIcon = document.getElementById('close-icon');
+    
+        // Open the overlay when the hamburger menu is clicked
+        menuIcon.addEventListener('click', function() {
+            navOverlay.style.display = 'flex';  // Show the overlay
+        });
+    
+        // Close the overlay when the close icon is clicked
+        closeIcon.addEventListener('click', function() {
+            navOverlay.style.display = 'none';  // Hide the overlay
+        });
+    
+        // Optionally, close the overlay when clicking outside of the menu (on mobile)
+        window.addEventListener('click', function(event) {
+            if (event.target === navOverlay) {
+                navOverlay.style.display = 'none';  // Hide the overlay
+            }
+        });
+    </script>
     <script src="../prism/prism.js"></script>
 </body>
 </html>
