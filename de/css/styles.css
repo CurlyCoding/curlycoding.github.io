@@ -179,10 +179,6 @@ a:active {
     color: #ff9505; /* Change to a bright accent color when active */
 }
 
-a:visited {
-    color: #a0a3d1; /* Keep visited links the same color */
-}
-
 ul {
     list-style-position: inside; /* Optional: Align bullets inside the list */
 }
