@@ -61,3 +61,42 @@
     font-size: 16px;
     color: #a0a3d1;
 }
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    /* Stack thumbnail on top for small screens */
+    .blog-post-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .thumbnail img {
+        width: 100%;
+        height: auto; /* Auto height to maintain aspect ratio */
+        margin-bottom: 15px;
+    }
+
+    .post-details {
+        margin-left: 0;
+    }
+
+    .post-title {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .page-title {
+        font-size: 36px;
+        margin: 20px 0;
+    }
+
+    .post-title {
+        font-size: 20px;
+    }
+
+    .post-date {
+        font-size: 14px;
+    }
+}
