@@ -5,7 +5,7 @@ SharedPreferences ist ein Flutter-Paket, mit der du einfach Daten speichern kann
 
 ## 1. Installation
 Füge zu `pubspec.yaml` folgendes hinzu:
-```
+```yaml
 dependecies:
  shared_preferences: ^2.2.0
 ```
