@@ -41,18 +41,29 @@
         <div class="container">
             <main class="main-content">
                 <h1>Flutter Hive</h1>
-                <p class="publish-date">18. September 2024</p>
+                <p class="publish-date">20. September 2024</p>
                 <div class="thumbnail">
-                    <img src="../img/img_hive.png">
+                    <img src="../img/flutter-hive.png" alt="flutter-hive.png">
                 </div>
                 <article class="blog-post">
+<nav class="table-of-contents">
+<h2>Inhaltsverzeichnis</h2>
+<ul><li><a href="#heading1"> Hive einrichten</a></li>
+<li><a href="#heading2"> Daten speichern, auslesen und löschen</a></li>
+<li><a href="#heading3"> Eigene Datentypen: TypeAdapter</a></li>
+<li><a href="#heading4"> Große Datenmengen: Lazy box</a></li>
+<li><a href="#heading5"> Vertrauliche Daten: Verschlüsselte box</a></li>
+<li><a href="#heading6"> Fazit</a></li>
+</ul>
+</nav>
+
 
 <p></p>
 <p>Hive ist eine schnelle und einfache Möglichkeit, um Key-Value Paare lokal zu speichern. Hive ist effizienter als die übliche Methode <code class="language-json">shared_preferences</code> und bietet mehr Features, wie zum Beispiel die Speicherung eigener Datentypen oder die Verschlüsselung von Daten.</p>
 <p></p>
 <p>In Hive werden die Daten in sogenannten Boxen gespeichert. Eine Box kann viele verschiedene Datentypen speichern. </p>
 <p></p>
-<h2> Hive einrichten</h2>
+<h2 id="heading1"> Hive einrichten</h2>
 <p>Um Hive zu nutzen, musst du folgende Pakete zur <code class="language-json">pubspex.yaml</code> Datei hinzufügen:</p>
 <p></p>
 <pre><code class="language-yaml">dependencies:
@@ -98,7 +109,7 @@ void main() async {
 </pre></code>
 <p>Wenn die gleiche Box nun erneut geöffnet wird, muss darauf geachtet werden, dass nur dieser Datentyp gespeichert wird und wieder die gleiche Notation beim Öffnen verwendet wird.</p>
 <p></p>
-<h2> Daten speichern, auslesen und löschen</h2>
+<h2 id="heading2"> Daten speichern, auslesen und löschen</h2>
 <p>Um Daten in einer Box zu speichern, weißt man einem Textschlüssel ein Objekt zu. Es können primitive Darttypen, Listen und Directories gespeichert werden. Außerdem kann man mit einem TypeAdapter eigene Datentypen speichern.</p>
 <p></p>
 <p>Dies sieht beispielsweise so aus:</p>
@@ -117,7 +128,7 @@ box.clear();
 <p></p>
 <p>Mit <code class="language-json">del</code> wird ein Eintrag gelöscht. Mit <code class="language-json">clear</code> werden alle Einträge gelöscht und.</p>
 <p></p>
-<h2> Eigene Datentypen: TypeAdapter</h2>
+<h2 id="heading3"> Eigene Datentypen: TypeAdapter</h2>
 <p>Um eigene Datentypen in einer Box zu speichern, muss zuerst die entsprechende Klasse erstellt werden.</p>
 <pre><code class="language-dart">import 'package:hive/hive.dart';
 
@@ -149,7 +160,7 @@ void main() async {
 }
 </pre></code>
 <p></p>
-<h2> Große Datenmengen: Lazy box</h2>
+<h2 id="heading4"> Große Datenmengen: Lazy box</h2>
 <p>Bei Benutzung der üblichen Box von Hive wird der gesamte Inhalt der Box im Arbeitsspeicher gespeichert, sobald die Box geöffnet wird. Für kleinere Datenmengen ist dies unproblematisch und praktisch, da so die Daten später synchron aufgerufen werden können. </p>
 <p></p>
 <p>Für größere Datenmengen belastet dies allerdings zunehmend den Arbeitsspeicher. Deswegen sollte man in diesen Fälle die lazy box benutzen. Diese lädt beim Öffnen alle Schlüssel und die Orte der Werte. Bei Bedarf werden die Werte dann aufgerufen.</p>
@@ -160,7 +171,7 @@ var value = await lazyBox.get('lazyVal');
 </pre></code>
 <p>Hier müssen Datenaufrufe mit <code class="language-json">await</code> gekennzeichnet werden. Ist eine lazy box bereits geöffnet, kann diese synchron mit <code class="language-json">Hive.lazyBox('myLazyBox')</code>  zurückgegeben werden.</p>
 <p></p>
-<h2> Vertrauliche Daten: Verschlüsselte box</h2>
+<h2 id="heading5"> Vertrauliche Daten: Verschlüsselte box</h2>
 <p>Möchte man vertrauliche Daten in einer Box speichern, sollte eine verschlüsselte Box verwenden. Diese Box verschlüsselt alle Werte, die einem Schlüssel zugewiesen wurden mit der AES-256 Verschlüsselung. Die Schlüssel werden nicht verschlüsselt. Der Verschlüsselungsschlüssel muss auch sicher gespeichert werden, wie zum Beispiel mit dem Paket <a href="https://pub.dev/packages/flutter_secure_storage">flutter_secure_storage</a>.</p>
 <p></p>
 <pre><code class="language-dart">import 'dart:convert';
@@ -183,7 +194,7 @@ final encryptedBox = await Hive.openBox('vaultBox', encryptionCipher: HiveAesCip
 var value = encryptedBox.put('secret');
 </pre></code>
 <p>Hier wird mit flutter_secure_storage ein Schlüssel gespeichert. Wenn es noch keinen gibt, wird automatisch ein sicherer Schlüssel von Hive erzeugt und dieser wird mit flutter_secure_storage in der Base64 Kodierung gespeichert. Dann wird der Schlüssel ausgelesen, der nun auf jeden Fall existiert, von Base64 dekodiert und aus Entschlüsselungsschlüssel der Box angegeben.</p>
-<h2> Fazit</h2>
+<h2 id="heading6"> Fazit</h2>
 <p>Wie man sieht, bietet Hive eine einfache und effiziente Möglichkeit Daten zu speichern. Hive hat viele wichtige Features wie synchrone, asynchrone Boxen und verschlüsselte Boxen. Hive eignet sich sowohl für kleine Datenmengen als auch für größere Datenmengen. Mehr Informationen kannst du in der <a href="https://docs.hivedb.dev/">Hive Dokumentation</a> finden.</p>
 
 
