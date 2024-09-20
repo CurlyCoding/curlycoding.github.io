@@ -59,3 +59,54 @@ h1 {
         height: auto;
     }
 }
+
+/* General styles for the table container */
+.table-container {
+    margin: 30px 0; /* Space around the table */
+    overflow-x: auto; /* Allow horizontal scroll for small screens */
+}
+
+/* Style for the table itself */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2a2d3e; /* Dark background for table */
+    border-radius: 10px;
+    overflow: hidden; /* Rounded corners */
+    color: white; /* Text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Table headers */
+.styled-table thead tr {
+    background-color: #3a3d4e; /* Slightly lighter background for headers */
+    color: #a0a3d1; /* Light gray-blue color for header text */
+    text-align: left;
+    font-weight: bold;
+}
+
+.styled-table th, .styled-table td {
+    padding: 15px 20px; /* Padding inside cells */
+    border-bottom: 1px solid #44475a; /* Border for rows */
+}
+
+/* Alternate row colors for the body */
+.styled-table tbody tr {
+    background-color: #2a2d3e; /* Default row color */
+    transition: background-color 0.3s ease;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #1e2130; /* Slightly darker for alternate rows */
+}
+
+.styled-table tbody tr:hover {
+    background-color: #3a3d4e; /* Change color on hover */
+}
+
+/* Table cell text alignment */
+.styled-table td {
+    color: #e6e6e6; /* Lighter color for text */
+    font-size: 16px;
+    text-align: left; /* Consistent alignment for all cells */
+}

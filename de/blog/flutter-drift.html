@@ -89,14 +89,7 @@ dev_dependencies:
 <p></p>
 <p>Um eine Tabelle zu erstellen, erstellt man eine Klasse, die die Klasse <code class="language-json">Table</code> erweitert. In einer Tabelle können nur bestimmte Dart Typen gespeichert werden. Die wichtigsten sind die folgenden:</p>
 <p></p>
-<p>| Dart Typ | Zeilentyp | Zeile |</p>
-<p>| --- | --- | --- |</p>
-<p>| int | IntColumn | integer() |</p>
-<p>| double | RealColumn | real() |</p>
-<p>| boolean | BooleanColumn | boolean()|</p>
-<p>| String | TextColumn | text() |</p>
-<p>| DateTime | DateTimeColumn | dateTime() |</p>
-<p></p>
+<p><div class="table-container"><table class="styled-table"><thead><tr><th>Dart Typ</th><th>Zeilentyp</th><th>Zeile</th></tr></thead><tbody><tr><td>int</td><td>IntColumn</td><td>integer()</td></tr><tr><td>double</td><td>RealColumn</td><td>real()</td></tr><tr><td>boolean</td><td>BooleanColumn</td><td>boolean()</td></tr><tr><td>String</td><td>TextColumn</td><td>text()</td></tr><tr><td>DateTime</td><td>DateTimeColumn</td><td>dateTime()</td></tr></tbody></table></div></p>
 <p>Die vollständige Liste kannst du <a href="https://drift.simonbinder.eu/docs/getting-started/advanced_dart_tables/">hier</a> finden. Andere Datentypen können auch gespeichert werden, indem sie in eine dieser konvertiert werden. Siehe unten.</p>
 <p></p>
 <p>Du kannst eine Zeile mit dem Datentyp <code class="language-json">int</code> und dem Namen <code class="language-json">name</code> hinzufügen, indem du <code class="language-json">IntColumn get name => integer()();</code> zur Tabellenklasse hinzufügts. </p>

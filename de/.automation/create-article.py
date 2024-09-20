@@ -15,16 +15,45 @@ def replace_links(text):
     replaced_text = re.sub(pattern, replace_match, text)
     return replaced_text
 
+
+def markdown_table_to_html(markdown):
+    # Regex to match multiple markdown tables
+    table_pattern = r"(\|(?:[^\n\|]+\|)+)\n(\|(?:[-: ]+\|)+)\n((?:\|(?:[^\n\|]+\|)+\n)*)"
+    
+    def convert_table(match):
+        header = match.group(1)
+        rows = match.group(3)
+        
+        # Convert header row to HTML
+        headers = header.strip().split('|')[1:-1]
+        header_html = "<thead><tr>" + "".join(f"<th>{col.strip()}</th>" for col in headers) + "</tr></thead>"
+        
+        # Convert table rows to HTML
+        rows_html = ""
+        for row in rows.strip().split('\n'):
+            columns = row.split('|')[1:-1]
+            rows_html += "<tr>" + "".join(f"<td>{col.strip()}</td>" for col in columns) + "</tr>"
+        
+        # Create full HTML table
+        table_html = f"<div class=\"table-container\"><table class=\"styled-table\">{header_html}<tbody>{rows_html}</tbody></table></div>"
+        
+        return table_html
+    
+    # Replace each markdown table with corresponding HTML
+    updated_markdown = re.sub(table_pattern, convert_table, markdown)
+    
+    return updated_markdown
+
 file = input("Enter the Markdown file: ")
 date = "18. September 2024"
 
 with open("article-preset.html", "r") as f:
     articleFile = f.read()
 
-
-
 with open(file) as f:
     full_art = f.read()
+
+full_art = markdown_table_to_html(full_art)
 
 full_art = replace_links(full_art)
 
