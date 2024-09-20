@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TITLE</title>
+    <title>Flutter http vs Dio</title>
     
     <!-- Prism.js for syntax highlighting -->
     <link href="../prism/prism.css" rel="stylesheet" />
@@ -40,14 +40,52 @@
 
         <div class="container">
             <main class="main-content">
-                <h1>TITLE</h1>
-                <p class="publish-date">DATE</p>
+                <h1>Flutter http vs Dio</h1>
+                <p class="publish-date">20. September 2024</p>
                 <div class="thumbnail">
-                    <img src="../img/THUMBNAIL">
+                    <img src="../img/flutter-http-vs-dio.png" alt="flutter-http-vs-dio.png">
                 </div>
                 <article class="blog-post">
+<nav class="table-of-contents">
+<h2>Inhaltsverzeichnis</h2>
+<ul><li><a href="#heading1"> Was ist http?</a></li>
+<li><a href="#heading2"> Was ist Dio?</a></li>
+<li><a href="#heading3"> Fazit</a></li>
+</ul>
+</nav>
 
-CONTENT
+
+<p>Sowohl Dio als auch http bieten die Möglichkeit Netzwerkanfragen in Flutter durchzuführern. Im folgenden werden beide Pakete miteinander verglichen und es wird erläutert, wann welches Paket am besten geeignet ist.</p>
+<p></p>
+<h2 id="heading1"> Was ist http?</h2>
+<p><a href="https://pub.dev/packages/http">http</a> ist ein Paket von dem offiziellen Dart Team, um essentielle Funktionen zum Netzwerken in Dart bereitzustellen.</p>
+<p></p>
+<p><strong>Vorteile</strong></p>
+<ul><li><strong>Vom offiziellen Dart Team</strong>: Da http vom offiziellen Dart Team entwickelt wurde, kann damit gerechnet werden, dass http in Zukunft weiterhin unterstützt wird und bugs schneller behoben werden</li>
+<li><strong>Größe</strong>: Da sich http nur auf die essentiellsten Features beschränkt, ist das Paket dementsprechend relativ klein</li>
+<li><strong>Einfache Verwendung</strong>: http ist einfach zu erlernen und zu verwenden</li>
+</ul>
+<p></p>
+<p><strong>Nachteile</strong></p>
+<ul><li><strong>Begrenzte Funktionalität</strong>: http bietet nur die wichtigsten Funktionen für Netzwerkanfragen an</li>
+</ul>
+<p>  </p>
+<h2 id="heading2"> Was ist Dio?</h2>
+<p><a href="https://pub.dev/packages/dio">Dio</a> stellt viele nützliche Funktionen zu Verfügung, damit nicht immer wieder für die gleiche Anwendung neue Funktionen implementiert werden müssen.</p>
+<p></p>
+<p><strong>Vorteile</strong></p>
+<ul><li><strong>Umfassende Funktionalität</strong>: Dio bietet viele Features für die meisten Fälle, in denen man Netzwerkanfragen braucht, wie zum Beispiel Interceptors, FormData oder Anfragestornierung</li>
+<li><strong>Einfache Verwendung</strong>: Dio ist einfach zu erlernen und zu verwenden</li>
+</ul>
+<p></p>
+<p><strong>Nachteile</strong></p>
+<ul><li><strong>Größe</strong>: Da Dio so viel Funktionalität beinhaltet, führt dies zu einen größeren App-Download</li>
+<li><strong>Geringe Zuverlässigkeit</strong>: Es gibt viele Bugs und Dio wird nicht mehr gepflegt</li>
+</ul>
+<p></p>
+<h2 id="heading3"> Fazit</h2>
+<p>Für kleinere Projekte kann mit Dio leicht Zeit gespart werden, da es viel mehr Features gibt, die nicht extra implementiert werden müssen. Für größere Projekte sollte man besser http verwenden und seine eigene Funktionen für komplexere Anwendungen schreiben. So wird garantiert, dass nicht mit der Zeit irgendwelche Bugs in Dio auftauchen, die das Projekt belasten.</p>
+
 
                 </article>
             </main>

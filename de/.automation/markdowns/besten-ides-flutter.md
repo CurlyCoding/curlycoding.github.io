@@ -1,4 +1,6 @@
-![[Die 5 besten IDEs & Texteditors für Flutter.png]]
+# Die 5 besten IDEs & Texteditors für Flutter
+20. September 2024
+![[besten-ides-flutter.png]]
 Flutter erfreut sich wachsender Beliebtheit bei Entwicklern. Um das Beste aus dieser Technologie herauszuholen, ist die Wahl der richtigen integrierten Entwicklungsumgebung (IDE) oder des passenden Texteditors von entscheidender Bedeutung. Hier sind die fünf besten IDEs und Texteditors:
 
 ## 1. Visual Studio Code

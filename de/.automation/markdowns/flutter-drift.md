@@ -1,4 +1,6 @@
-![[Flutter Drift.png]]
+# Flutter Drift
+20. September 2024
+![[flutter-drift.png]]
 Die Speicherung lokaler Daten ist von grundlegender Bedeutung für jede App. Um komplexe Daten zu speichern, werden relationelle Datenbanken wie SQL benutzt. Wie auch viele andere Pakete implementiert Drift SQLite in Flutter. Im folgenden Artikel wirst du lernen, wie man eine Datenbank mit Drift erstellt und an dieser einfache Operationen ausführt.
 
 ## Warum Drift

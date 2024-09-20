@@ -1,4 +1,6 @@
-![[img_hive.png]]
+# Flutter Hive
+20. September 2024
+![[flutter-hive.png]]
 
 Hive ist eine schnelle und einfache Möglichkeit, um Key-Value Paare lokal zu speichern. Hive ist effizienter als die übliche Methode `shared_preferences` und bietet mehr Features, wie zum Beispiel die Speicherung eigener Datentypen oder die Verschlüsselung von Daten.
 

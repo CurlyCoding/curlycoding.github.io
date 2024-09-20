@@ -110,3 +110,53 @@ h1 {
     font-size: 16px;
     text-align: left; /* Consistent alignment for all cells */
 }
+
+/* Style for the table of contents */
+.table-of-contents {
+    background-color: #2a2d3e; /* Dark background */
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.table-of-contents h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #a0a3d1;
+}
+
+.table-of-contents ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.table-of-contents ul li {
+    margin-bottom: 10px;
+}
+
+.table-of-contents ul li a {
+    color: #a0a3d1;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.table-of-contents ul li a:hover {
+    color: #ffffff; /* Change to white on hover */
+}
+
+.table-of-contents ul ul {
+    margin-top: 10px;
+    margin-left: 20px; /* Indentation for subheadings */
+}
+
+.table-of-contents ul ul li a {
+    font-size: 16px;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Set this to the height of your topbar */
+}
