@@ -13,7 +13,6 @@ Sowohl Dio als auch http bieten die Möglichkeit Netzwerkanfragen in Flutter dur
 
 **Nachteile**
 - **Begrenzte Funktionalität**: http bietet nur die wichtigsten Funktionen für Netzwerkanfragen an
-  
 ## Was ist Dio?
 [Dio](https://pub.dev/packages/dio) stellt viele nützliche Funktionen zu Verfügung, damit nicht immer wieder für die gleiche Anwendung neue Funktionen implementiert werden müssen.
 

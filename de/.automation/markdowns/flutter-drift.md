@@ -39,15 +39,14 @@ Die Funktionsweise von Dart soll an folgender relationeller Datenbank demonstrie
 Eine Bücherei möchte die Ausleihen speichern. Dazu werden jeweils Tabellen für die Autoren, Bücher und Ausleihen erstellt.
 
 ## 1. Tabellen erstellen
-
 Um eine Tabelle zu erstellen, erstellt man eine Klasse, die die Klasse `Table` erweitert. In einer Tabelle können nur bestimmte Dart Typen gespeichert werden. Die wichtigsten sind die folgenden:
 
-| Dart Typ | Zeilentyp | Zeile |
-| --- | --- | --- |
-| int | IntColumn | integer() |
-| double | RealColumn | real() |
-| boolean | BooleanColumn | boolean()|
-| String | TextColumn | text() |
+| Dart Typ | Zeilentyp      | Zeile      |
+| -------- | -------------- | ---------- |
+| int      | IntColumn      | integer()  |
+| double   | RealColumn     | real()     |
+| boolean  | BooleanColumn  | boolean()  |
+| String   | TextColumn     | text()     |
 | DateTime | DateTimeColumn | dateTime() |
 
 Die vollständige Liste kannst du [hier](https://drift.simonbinder.eu/docs/getting-started/advanced_dart_tables/) finden. Andere Datentypen können auch gespeichert werden, indem sie in eine dieser konvertiert werden. Siehe unten.
@@ -55,6 +54,7 @@ Die vollständige Liste kannst du [hier](https://drift.simonbinder.eu/docs/getti
 Du kannst eine Zeile mit dem Datentyp `int` und dem Namen `name` hinzufügen, indem du `IntColumn get name => integer()();` zur Tabellenklasse hinzufügts. 
 
 Beispielsweise kann man so eine Tabelle mit Autoren erstellen, indem man eine nehe Datei `tables.dart` erstellt:
+
 ```dart
 import 'package:drift/drift.dart';
 
@@ -184,6 +184,7 @@ Möchte man statt den herkömmlichen Datentypen seine eigenen speichern, müssen
 Dazu erstellt man eine Klasse, die `TypeConverter<Type1, Type2>` erweitert. Statt `Type1` gibt man die eigene Klasse an und für `Type2` die speicherbare Klasse. Für diese Klasse müssen nun zwei Methoden implementiert werden: `toSql` und `fromSql`.
 
 Hat man zum Beispiel eine Klasse `Name`, von der eine Instanz in jedem Objekt der Klasse `Author` gespeichert werden soll, sieht dies so aus:
+
 ```dart
 class Name {
   String firstname,

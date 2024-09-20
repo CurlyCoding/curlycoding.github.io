@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flutter shared_preferences: Einstellungen speichern</title>
+    <title>Flutter shared preferences: Einstellungen speichern</title>
     
     <!-- Prism.js for syntax highlighting -->
     <link href="../prism/prism.css" rel="stylesheet" />
@@ -40,93 +40,90 @@
 
         <div class="container">
             <main class="main-content">
-                <h1>Flutter shared_preferences: Einstellungen speichern</h1>
+                <h1>Flutter shared preferences: Einstellungen speichern</h1>
                 <p class="publish-date">20. September 2024</p>
                 <div class="thumbnail">
-                    <img src="../img/flutter-shared-preferences.png" alt="flutter-shared-preferences.png">
+                    <img src="../img/flutter-shared-preferences.png">
                 </div>
                 <article class="blog-post">
 <nav class="table-of-contents">
 <h2>Inhaltsverzeichnis</h2>
-<ul><li><a href="#heading1"> 1. Installation</a></li>
-<li><a href="#heading2"> 2. SharedPreferences Methoden</a></li>
+<ul><li><a href="#1. Installation">1. Installation</a></li>
+<li><a href="#2. SharedPreferences Methoden">2. SharedPreferences Methoden</a></li>
 <ul>
-<li><a href="#heading3"> Hinzufügen</a></li>
-<li><a href="#heading4"> Auslesen</a></li>
-<li><a href="#heading5"> Löschen</a></li>
-<li><a href="#heading6"> Prüfen, ob Daten gespeichert sind</a></li>
+<li><a href="#Hinzufügen">Hinzufügen</a></li>
+<li><a href="#Auslesen">Auslesen</a></li>
+<li><a href="#Löschen">Löschen</a></li>
+<li><a href="#Prüfen, ob Daten gespeichert sind">Prüfen, ob Daten gespeichert sind</a></li>
 </ul>
-<li><a href="#heading7"> 3. Standardwerte</a></li>
-<li><a href="#heading8"> 4. Beispiel: Light und Dark Mode Counter App</a></li>
+<li><a href="#3. Standardwerte">3. Standardwerte</a></li>
+<li><a href="#4. Beispiel: Light und Dark Mode Counter App">4. Beispiel: Light und Dark Mode Counter App</a></li>
 </ul>
 </nav>
 
 
 <p>SharedPreferences ist ein Flutter-Paket, mit der du einfach Daten speichern kannst. Dazu weist man einen Schlüssel eine Zahl, Zeichenkette oder Wahrheitswert zu und kann diesen immer leicht wieder aufrufen. SharedPreferences kann für alle Plattformen benutzt werden.</p>
-<p></p>
-<h2 id="heading1"> 1. Installation</h2>
+
+<h2 id="1. Installation">1. Installation</h2>
 <p>Füge zu <code class="language-json">pubspec.yaml</code> folgendes hinzu:</p>
-<pre><code class="language-json">dependecies:
- shared_preferences: ^2.2.0
-</pre></code>
+<p><code class="language-json">`</code></p>
+<p>dependecies:</p>
+<p> shared_preferences: ^2.2.0</p>
+<p><code class="language-json">`</code></p>
 <p>Du kannst die neuste Version <a href="https://pub.dev/packages/shared_preferences/install">hier</a> finden.</p>
-<p></p>
+
 <p>Um SharedPreferences nun in einer Datei zu nutzen, musst du einfach das Paket importieren mit:</p>
-<pre><code class="language-dart">import 'package:shared_preferences/shared_preferences.dart';
-</pre></code>
+<p><pre><code class="language-dart">import 'package:shared_preferences/shared_preferences.dart';
+</code></pre></p>
 <p>Dann erstellst du eine Instanz von SharedPreferences mit</p>
-<pre><code class="language-dart">SharedPreferences prefs = await SharedPreferences.getInstance();
-</pre></code>
-<p></p>
-<h2 id="heading2"> 2. SharedPreferences Methoden</h2>
+<p><pre><code class="language-dart">SharedPreferences prefs = await SharedPreferences.getInstance();
+</code></pre></p>
+
+<h2 id="2. SharedPreferences Methoden">2. SharedPreferences Methoden</h2>
 <p>Die folgenden Dart Datentypen können mit SharedPreferences gespeichert werden:</p>
-<ul><li>`int`</li>
-<li>`double`</li>
-<li>`String`</li>
-<li>`bool`</li>
-</ul>
-<p></p>
+<p><p><ul><li><code class="language-json">int</code></li><li><code class="language-json">double</code></li><li><code class="language-json">String</code></li><li><code class="language-json">bool</code></li></ul></p></p>
+
 <p>Andere Daten können auch gespeichert werden, indem diese erst in eine dieser Datentypen konvertiert wird und beim Auslesen wieder in die ursprüngliche Form bringen.</p>
-<p></p>
-<h3 id="heading3"> Hinzufügen</h3>
-<pre><code class="language-dart">prefs.setInt('int_key', 1);
+
+<h3 id="Hinzufügen">Hinzufügen</h3>
+<p><pre><code class="language-dart">prefs.setInt('int_key', 1);
 prefs.setDouble('double_key', 3.14)
 prefs.setString('string_key', 'value');
 prefs.setBool('bool_key', true);
-</pre></code>
+</code></pre></p>
 <p>Jedem Schlüssel kann höchstens ein Datentyp zugewiesen werden. Wird dem Schlüssel ein neuer Wert zugewiesen, wird der letzte gelöscht.</p>
-<p></p>
-<h3 id="heading4"> Auslesen</h3>
-<pre><code class="language-dart">int v1 = prefs.getInt('int_key');
+
+<h3 id="Auslesen">Auslesen</h3>
+<p><pre><code class="language-dart">int v1 = prefs.getInt('int_key');
 double v2 = prefs.getDouble('double_key');
 String v3 = prefs.getString('string_key');
 bool v4 = prefs.getBool('bool_key');
-</pre></code>
+</code></pre></p>
 <p>Wird ein get-Methode eines Datentypen für einen Schlüssel aufgerufen, bei dem nicht diese Datentyp gespeichert wurde, wird <code class="language-json">null</code> zurückgegeben.</p>
-<p></p>
-<h3 id="heading5"> Löschen</h3>
+
+<h3 id="Löschen">Löschen</h3>
 <p>Daten, die einem bestimmten Schlüssel zugeordnet, können gelöscht werden mit der <code class="language-json">prefs.remove</code> Methode:</p>
-<pre><code class="language-dart">prefs.remove('key');
-</pre></code>
-<p></p>
-<h3 id="heading6"> Prüfen, ob Daten gespeichert sind</h3>
+<p><pre><code class="language-dart">prefs.remove('key');
+</code></pre></p>
+
+<h3 id="Prüfen, ob Daten gespeichert sind">Prüfen, ob Daten gespeichert sind</h3>
 <p>Es kann einfach überprüft werden, ob einem Schlüssel ein Wert zugeordnet sind:</p>
-<pre><code class="language-dart">prefs.containsKey('key');
-</pre></code>
+<p><pre><code class="language-dart">prefs.containsKey('key');
+</code></pre></p>
 <p>Die Methode gibt einen Wahrheitswert zurück - <code class="language-json">true</code>, wenn Wert vorhanden, sonst <code class="language-json">false</code>.</p>
-<p></p>
-<h2 id="heading7"> 3. Standardwerte</h2>
+
+<h2 id="3. Standardwerte">3. Standardwerte</h2>
 <p>Beispielsweise bei der Implementation von Voreinstellungen ist es nützlich einen bestimmten Schlüssel einen Standardwert zugeben. Da standardmäßig jedem Schlüssel <code class="language-json">null</code> zugewiesen ist, kann man mit dem <code class="language-json">??</code> Operator arbeiten:</p>
-<pre><code class="language-dart">bool v = prefs.getBool('dark') ?? false;
-</pre></code>
-<p></p>
+<p><pre><code class="language-dart">bool v = prefs.getBool('dark') ?? false;
+</code></pre></p>
+
 <p>Falls der Wert vor dem <code class="language-json">??</code> Operator <code class="language-json">null</code> ist, wird der Wert nach dem <code class="language-json">??</code> zurückgegeben, sonst der normale Wert.</p>
-<p></p>
-<h2 id="heading8"> 4. Beispiel: Light und Dark Mode Counter App</h2>
+
+<h2 id="4. Beispiel: Light und Dark Mode Counter App">4. Beispiel: Light und Dark Mode Counter App</h2>
 <p>Nun soll die Verwendung von SharedPreferences an der Standard Counter App demonstriert werden. Es soll sowohl ein Dark Mode implementiert werden, also auch der Zähler gespeichert werden.</p>
-<p></p>
+
 <p>Dazu erstellt man drei Methoden: Eine zum Speichern der Dark Mode Einstellung, zum Speichern des Zählers und zum Laden der Daten.</p>
-<pre><code class="language-dart">void _toggleDark(bool value) async {
+<p><pre><code class="language-dart">void _toggleDark(bool value) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   setState(() {
     _dark = value;
@@ -149,13 +146,13 @@ void _loadData() async {
     _dark = (prefs.getBool('dark') ?? true);
   });
 }
-</pre></code>
-<p></p>
-<p><img src="../img/shared-pre-scr1.png" alt="shared-pre-scr1.png"></p>
-<p><img src="../img/shared-pre-scr2.png" alt="shared-pre-scr2.png"></p>
-<p></p>
+</code></pre></p>
+
+<img src="../img/shared-pre-scr1.png" alt="shared-pre-scr1.png">
+<img src="../img/shared-pre-scr2.png" alt="shared-pre-scr2.png">
+
 <p>Im folgenden siehst du den gesamten Code der <code class="language-json">main.dart</code> Datei:</p>
-<pre><code class="language-dart">import 'package:flutter/material.dart';
+<p><pre><code class="language-dart">import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -251,9 +248,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-</pre></code>
-
+</code></pre></p>
 
                 </article>
             </main>

@@ -1,4 +1,4 @@
-# Flutter shared_preferences: Einstellungen speichern
+# Flutter shared preferences: Einstellungen speichern
 20. September 2024
 ![[flutter-shared-preferences.png]]
 SharedPreferences ist ein Flutter-Paket, mit der du einfach Daten speichern kannst. Dazu weist man einen Schlüssel eine Zahl, Zeichenkette oder Wahrheitswert zu und kann diesen immer leicht wieder aufrufen. SharedPreferences kann für alle Plattformen benutzt werden.
@@ -199,5 +199,4 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
 ```
