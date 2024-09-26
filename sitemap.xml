@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!--
+    <url>
+        <loc>https://curlycoding.github.io/de/</loc>
+    </url>
+-->
+    <url>
+        <loc>https://curlycoding.github.io/de/blog</loc>
+    </url>
+    <url>
+        <loc>https://curlycoding.github.io/de/blog/besten-ides-flutter</loc>
+    </url>
+    <url>
+        <loc>https://curlycoding.github.io/de/blog/flutter-drift</loc>
+    </url>
+    <url>
+        <loc>https://curlycoding.github.io/de/blog/flutter-hive</loc>
+    </url>
+    <url>
+        <loc>https://curlycoding.github.io/de/blog/flutter-http-vs-dio</loc>
+    </url>
+    <url>
+        <loc>https://curlycoding.github.io/de/blog/flutter-shared_preferences-einstellungen</loc>
+    </url>
+</urlset>
